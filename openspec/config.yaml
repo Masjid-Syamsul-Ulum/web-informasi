@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Proyek: web utama Masjid Syamsul Ulum (MSU) Telkom University, dikelola DKM Syamsul Ulum.
+  DKM adalah organisasi nirlaba dengan developer yang berganti-ganti, kebanyakan vibe coder.
+
+  Tujuan: memusatkan informasi MSU (profil, program, kabar, layanan, infak) di satu web yang
+  cepat, mudah ditemukan mesin pencari dan AI, serta mudah dirawat oleh orang baru.
+  Web ini menggantikan situs WordPress lama di syamsululum.telkomuniversity.ac.id.
+
+  Peran web: wadah. App lain berdiri sendiri di subdomain masing-masing. Peminjaman fasilitas
+  sudah berjalan di syamsululum.site; PRADA, manajemen kader, dan mentoring menyusul.
+  Integrasinya hanya lewat link dan identitas visual yang sama, tanpa database bersama.
+
+  Stack: Next.js App Router, TypeScript, Tailwind CSS, npm, Node 24, deploy di Vercel.
+  Fase awal tanpa CMS, database, dan auth; konten berupa data bertipe di content/.
+  Sanity menyusul sebagai CMS setelah desain matang. Better Auth direncanakan untuk app lain,
+  bukan untuk web ini.
+
+  Proses: agile dan spec-driven. Change kecil, satu orang per change, dan iterasi desain
+  lewat link preview di setiap PR.
+
+  Identitas visual diturunkan dari poster Figma "Media-DKMSU":
+  - Warna: #005124 (hijau tua), #0F7C3F (hijau utama), #202020 (teks), #F4F4F4 (latar).
+  - Ciri: headline tebal dengan bagian tipis, baris info dengan ikon di kotak hijau,
+    tombol pill hijau tua, foto masjid dengan overlay hijau.
+  - Tidak dibawa ke web: daun melayang, deretan logo partner, ilustrasi 3D, teks padat ala poster.
+
+  Aturan kerja lengkap ada di AGENTS.md di root repo.
+
+rules:
+  proposal:
+    - Tulis dalam Bahasa Indonesia, maksimal satu halaman.
+    - Sebut folder atau halaman yang dipegang change ini supaya kerja paralel tidak bentrok.
+    - Tulis apa yang sengaja tidak dikerjakan.
+  specs:
+    - Atur struktur dan perilaku yang dilihat pengunjung, bukan detail piksel.
+  design:
+    - Buat design.md hanya kalau ada keputusan teknis yang perlu alasan. Sertakan alternatif yang ditolak.
+    - Setiap lapisan baru (dependency, abstraksi, state, API) harus punya alasan kebutuhan pengunjung yang nyata.
+  tasks:
+    - Task kecil dan bisa dicek. Selalu sertakan lint, build, serta cek tampilan di 375 px dan 1280 px.
