@@ -4,6 +4,7 @@ export const site: SiteInfo = {
   name: "Masjid Syamsul Ulum",
   description:
     "Informasi kegiatan, program, layanan, dan infak Masjid Syamsul Ulum Telkom University.",
+  tagline: { title: "Jadi bagian dari", titleLight: "keluarga besar Syamsul 'Ulum." },
   address:
     "Gate 4 Telkom University, Jl. Telekomunikasi, Jl. Terusan Buah Batu No. 1, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257",
   contacts: [

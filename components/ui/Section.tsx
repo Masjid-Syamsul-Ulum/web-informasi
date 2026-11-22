@@ -1,9 +1,26 @@
 import { Container } from "./Container";
+import { Pattern } from "./Pattern";
 
-export function Section({ children }: { children: React.ReactNode }) {
+type SectionProps = {
+  children: React.ReactNode;
+  tone?: "white" | "cream" | "green";
+  pattern?: boolean;
+  id?: string;
+};
+
+const tones = {
+  white: "bg-white",
+  cream: "bg-cream",
+  green: "bg-brand-900 text-white",
+};
+
+export function Section({ children, tone = "white", pattern = false, id }: SectionProps) {
   return (
-    <section className="py-16 sm:py-24">
-      <Container>{children}</Container>
+    <section id={id} data-tone={tone} className={`relative overflow-hidden py-20 sm:py-28 ${tones[tone]}`}>
+      {pattern && <Pattern className={tone === "green" ? "text-white/[0.07]" : "text-brand-900/[0.06]"} />}
+      <div className="relative">
+        <Container>{children}</Container>
+      </div>
     </section>
   );
 }

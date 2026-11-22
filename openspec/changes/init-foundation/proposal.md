@@ -5,10 +5,11 @@ Repo ini masih kosong. Sebelum beberapa orang mengerjakan halaman secara paralel
 ## What Changes
 
 - Init proyek Next.js (App Router, TypeScript, Tailwind CSS, ESLint) dengan npm dan Node 24.
-- Design tokens dari poster Figma (warna, font, radius) di `app/globals.css`.
-- Komponen dasar di `components/ui/`: `Container`, `Section`, `SectionHeading`, `Button`, `Card`, `InfoRow`.
-- Halaman `/komponen` untuk melihat semua komponen dasar. Halaman ini tidak masuk menu dan tidak diindeks mesin pencari.
-- Header (dengan menu mobile) dan footer di `components/layout/`.
+- DNA desain di `DESIGN.md`: warna hijau dari poster Figma dengan aksen emas dan latar krem, font Plus Jakarta Sans, dan bentuk khas dari gedung MSU (jendela beratap runcing, kubah, pola bintang delapan, deret jendela, garis gedung).
+- Design tokens di `app/globals.css` dan ikon buatan sendiri di `components/icons/`.
+- Komponen dasar di `components/ui/`, termasuk tombol dengan micro-interaction, card bernada warna, card berbingkai jendela, dan grid yang tidak kaku.
+- Halaman `/komponen` sebagai katalog DNA desain dan contoh komposisi. Halaman ini tidak masuk menu dan tidak diindeks mesin pencari.
+- Header melayang (dengan menu mobile) dan footer hijau berpola di `components/layout/`.
 - Folder `content/` berisi data situs, navigasi, dan daftar app, beserta tipenya.
 - Halaman placeholder untuk setiap menu: `/`, `/tentang`, `/program`, `/kabar`, `/layanan`, `/infak`. Nama menu ini usulan awal dan boleh diubah saat review.
 - Metadata dasar: judul per halaman, deskripsi situs, dan `lang="id"`.
@@ -20,7 +21,7 @@ Sengaja tidak dikerjakan di change ini: isi halaman, Sanity, auth, database, API
 
 ### New Capabilities
 
-- `design-system`: design tokens, komponen dasar bersama, dan halaman `/komponen`.
+- `design-system`: design tokens, bentuk khas, ikon, komponen dasar bersama, dan halaman `/komponen`.
 - `site-layout`: header, menu mobile, footer, halaman placeholder, dan metadata dasar.
 - `site-content`: data situs bertipe di `content/` sebagai sumber teks untuk komponen.
 
@@ -31,5 +32,5 @@ Sengaja tidak dikerjakan di change ini: isi halaman, Sanity, auth, database, API
 ## Impact
 
 - Change ini menyentuh seluruh repo karena proyeknya baru.
-- Dependency: `next`, `react`, `tailwindcss`, `lucide-react`, dan `@fission-ai/openspec` (dev).
+- Dependency: `next`, `react`, `tailwindcss`, dan `@fission-ai/openspec` (dev). Tanpa library ikon atau library UI.
 - Satu orang mengerjakan change ini sampai merge. Setelah itu, change per halaman bisa dikerjakan paralel: `page-beranda`, `page-tentang`, `page-program`, `page-kabar`, `page-layanan`, dan `page-infak`.

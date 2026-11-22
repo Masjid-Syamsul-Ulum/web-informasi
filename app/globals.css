@@ -1,14 +1,42 @@
 @import "tailwindcss";
 
 @theme {
+  /* Hijau identitas (variable Figma) dan turunannya */
+  --color-brand-950: #00381a;
   --color-brand-900: #005124;
   --color-brand-700: #0f7c3f;
+  --color-brand-100: #e4f1e8;
+
+  /* Aksen emas untuk sorotan, bukan untuk teks di atas putih */
+  --color-gold-400: #f2b441;
+
+  /* Netral */
   --color-ink: #202020;
   --color-surface: #f4f4f4;
+  --color-cream: #f8f4ec;
 
-  --radius-card: 1rem;
+  --radius-card: 2rem;
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility shape-window {
+  /* Bentuk jendela gedung MSU: badan tegak dengan atap runcing */
+  clip-path: polygon(0 100%, 0 26%, 50% 0, 100% 26%, 100% 100%);
+}
+
+@utility mask-pattern {
+  mask: url("/shapes/pattern-star.svg") repeat;
+  mask-size: 72px;
+}
+
+@utility mask-window-row {
+  mask: url("/shapes/window-row.svg") repeat-x bottom;
+  mask-size: 48px 24px;
+}
+
+@utility mask-building {
+  mask: url("/shapes/msu-building-line.svg") no-repeat center / contain;
 }

@@ -6,5 +6,5 @@ export const navigation: NavItem[] = [
   { label: "Program", href: "/program" },
   { label: "Kabar", href: "/kabar" },
   { label: "Layanan", href: "/layanan" },
-  { label: "Infak", href: "/infak" },
+  { label: "Infak", href: "/infak", highlight: true },
 ];

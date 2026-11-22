@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Section>
+    <Section tone="cream" pattern>
       <SectionHeading level={1} title="Tentang" description="Halaman ini sedang dibuat." />
     </Section>
   );

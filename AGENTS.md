@@ -6,7 +6,7 @@ Panduan untuk developer dan AI agent (Claude Code, Codex, Cursor, dan lainnya) y
 
 Web utama Masjid Syamsul Ulum (MSU) Telkom University: beranda, profil, program, kabar, layanan, dan infak. Web ini adalah **wadah**. App lain (peminjaman fasilitas, PRADA, manajemen kader, mentoring) berdiri sendiri di subdomain masing-masing dan hanya ditautkan dari sini.
 
-Konteks proyek dan alasan keputusan ada di `openspec/config.yaml` dan folder `openspec/`.
+Konteks proyek dan alasan keputusan ada di `openspec/config.yaml` dan folder `openspec/`. DNA desain (warna, bentuk, ikon, interaksi) ada di `DESIGN.md`, dengan contoh hidup di halaman `/komponen`.
 
 ## Stack
 
@@ -20,9 +20,10 @@ Konteks proyek dan alasan keputusan ada di `openspec/config.yaml` dan folder `op
 app/<route>/                satu halaman = satu folder
 app/<route>/_components/    komponen yang hanya dipakai halaman itu
 components/ui/              komponen dasar bersama
+components/icons/           ikon buatan sendiri
 components/layout/          header dan footer
 content/                    teks dan data situs, bertipe
-public/                     logo dan gambar
+public/                     logo, foto, dan bentuk (shapes/)
 openspec/                   konteks proyek, spec, dan change
 ```
 
@@ -32,7 +33,7 @@ openspec/                   konteks proyek, spec, dan change
 2. **Teks konten tidak ditulis di JSX.** Informasi tentang MSU disimpan di `content/`, lalu komponen menerimanya lewat props. Label antarmuka kecil seperti "Buka menu" boleh tetap di komponen.
 3. **Bentuk data siap CMS.** Tipe di `content/` dibuat datar seperti dokumen Sanity: punya `slug` kalau ada halaman detail, gambar berupa `{ src, alt }`, tanggal berupa string ISO. Nanti yang diganti cukup sumber datanya.
 4. **Warna, font, dan radius hanya dari design tokens** di `app/globals.css`. Jangan menulis hex atau nilai acak di komponen. Kalau butuh token baru, tambahkan lewat PR terpisah.
-5. **Cek `components/ui/` sebelum membuat komponen.** Jangan membuat versi Button atau Card sendiri.
+5. **Cek `components/ui/`, `components/icons/`, dan `/komponen` sebelum membuat komponen.** Jangan membuat versi Button, Card, atau ikon sendiri, dan jangan memasang library ikon.
 6. **App lain cukup lewat link** di `content/apps.ts`. Tidak ada database bersama dan tidak ada panggilan API ke app lain.
 7. **Butuh change OpenSpec yang disetujui** sebelum menambah API route, server action, database, auth, state library, atau library UI (shadcn, MUI, dan sejenisnya).
 8. **Dependency baru** harus disebut alasannya di PR.

@@ -7,8 +7,11 @@
 
 ## 2. Design tokens
 
-- [x] 2.1 Definisikan token warna dan radius di `app/globals.css` dengan `@theme`
-- [x] 2.2 Pasang font Inter lewat `next/font` dan hubungkan ke token font
+- [x] 2.1 Definisikan token warna (hijau, emas, krem) dan radius di `app/globals.css` dengan `@theme`
+- [x] 2.2 Pasang Plus Jakarta Sans lewat `next/font` dan hubungkan ke token font
+- [x] 2.3 Ekspor logo, foto gedung, dan ilustrasi garis gedung dari Figma ke `public/`
+- [x] 2.4 Buat bentuk khas: `shape-window`, pola bintang delapan, deret jendela, dan garis gedung
+- [x] 2.5 Gambar ikon sendiri di `components/icons` dan tulis `DESIGN.md`
 
 ## 3. Konten
 
@@ -19,14 +22,14 @@
 ## 4. Komponen dasar
 
 - [x] 4.1 Buat `Container`, `Section`, dan `SectionHeading` (judul tebal dan tipis)
-- [x] 4.2 Buat `Button` dengan varian `primary` dan `secondary`, yang menjadi link kalau diberi `href`
-- [x] 4.3 Buat `Card` dan `InfoRow` dengan ikon dari `lucide-react`
-- [x] 4.4 Buat halaman `/komponen` dengan `noindex`, tanpa link di menu
+- [x] 4.2 Buat `Button` (primary, gold, outline, light) dengan micro-interaction panah, dan `TextLink`
+- [x] 4.3 Buat `Card` bernada warna, `ArchFrame`, `ArchCard`, `Pill`, `InfoRow`, dan `StaggerGrid`
+- [x] 4.4 Buat halaman `/komponen` (katalog DNA dan contoh komposisi) dengan `noindex`, tanpa link di menu
 
 ## 5. Layout
 
-- [x] 5.1 Buat `SiteHeader` dengan menu desktop dan menu mobile sebagai client component kecil
-- [x] 5.2 Buat `SiteFooter`
+- [x] 5.1 Buat `SiteHeader` melayang dengan menu desktop dan menu mobile sebagai client component kecil
+- [x] 5.2 Buat `SiteFooter` hijau berpola dengan deret jendela, ajakan Infak, kolom menu, layanan, kontak, dan garis gedung
 - [x] 5.3 Pasang header, footer, `lang="id"`, dan metadata dasar di root layout
 - [x] 5.4 Buat halaman placeholder untuk `/`, `/tentang`, `/program`, `/kabar`, `/layanan`, dan `/infak`
 
@@ -40,6 +43,6 @@
 ## 7. Verifikasi
 
 - [x] 7.1 `npm run lint` dan `npm run build` lolos
-- [x] 7.2 Cek semua route di 375 px dan 1280 px, termasuk membuka dan menutup menu mobile dengan keyboard
+- [x] 7.2 Cek semua route di 375 px dan 1280/1440 px, termasuk menu mobile dengan keyboard dan hover tombol
 - [x] 7.3 Pastikan tidak ada nilai hex di `components/` dan `app/` selain `app/globals.css`
 - [x] 7.4 Pastikan judul tab setiap halaman sesuai format "<Judul> | Masjid Syamsul Ulum"

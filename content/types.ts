@@ -1,6 +1,7 @@
 export type NavItem = {
   label: string;
   href: string;
+  highlight?: boolean;
 };
 
 export type ContactLink = {
@@ -12,6 +13,7 @@ export type ContactLink = {
 export type SiteInfo = {
   name: string;
   description: string;
+  tagline: { title: string; titleLight: string };
   address: string;
   contacts: ContactLink[];
 };
