@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NewsPage() {
   return (
-    <Section tone="cream" pattern>
+    <Section tone="cream" pattern="star">
       <SectionHeading level={1} title="Kabar" description="Halaman ini sedang dibuat." />
     </Section>
   );

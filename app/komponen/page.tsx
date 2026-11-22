@@ -9,7 +9,6 @@ import {
   IconLocation,
   IconMosque,
   IconQuran,
-  IconStar,
 } from "@/components/icons";
 import { ArchCard } from "@/components/ui/ArchCard";
 import { ArchFrame } from "@/components/ui/ArchFrame";
@@ -23,6 +22,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGrid } from "@/components/ui/StaggerGrid";
 import { TextLink } from "@/components/ui/TextLink";
 import { WindowRow } from "@/components/ui/WindowRow";
+import { BackgroundsDemo } from "./_components/BackgroundsDemo";
+import { ContentCardsDemo } from "./_components/ContentCardsDemo";
+import { HeroAltDemo } from "./_components/HeroAltDemo";
+import { HeroDemo } from "./_components/HeroDemo";
+import { Label } from "./_components/Label";
 
 // Katalog DNA desain untuk review tampilan. Semua teks dan angka di halaman ini hanya peraga.
 export const metadata: Metadata = {
@@ -41,54 +45,10 @@ const colors = [
   { name: "ink", hex: "#202020", use: "Teks isi", className: "bg-ink text-white" },
 ];
 
-function Label({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="mb-8 flex items-center gap-2 text-sm font-semibold text-brand-700 in-data-[tone=green]:text-gold-400">
-      <IconStar className="size-4" />
-      {children}
-    </p>
-  );
-}
-
 export default function ComponentsPage() {
   return (
     <>
-      <Section tone="green" pattern>
-        <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
-          <div>
-            <Pill icon={IconStar} tone="dark">
-              DNA desain web MSU
-            </Pill>
-            <div className="mt-8">
-              <SectionHeading
-                level={1}
-                title="Rumah bersama"
-                titleLight="sivitas Telkom University."
-                description="Warna, bentuk, ikon, dan komponen yang dipakai semua halaman. Teks dan angka di halaman ini hanya peraga."
-              />
-            </div>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="#komponen" variant="gold">
-                Lihat komponen
-              </Button>
-              <Button href="#komposisi" variant="light">
-                Contoh komposisi
-              </Button>
-            </div>
-          </div>
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-            <ArchFrame accent className="aspect-[4/5]">
-              <Image src="/images/msu-windows.jpg" alt="Jendela runcing gedung Masjid Syamsul Ulum" fill priority sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
-            </ArchFrame>
-            <div className="absolute top-[38%] left-0 sm:-left-8">
-              <Pill icon={IconCalendar}>Kajian rutin</Pill>
-            </div>
-            <div className="absolute right-0 bottom-14 sm:-right-6">
-              <Pill icon={IconCommunity}>Kader &amp; mentoring</Pill>
-            </div>
-          </div>
-        </div>
-      </Section>
+      <HeroDemo />
 
       <Section id="komponen" tone="white">
         <Label>Warna</Label>
@@ -121,6 +81,8 @@ export default function ComponentsPage() {
         </div>
       </Section>
 
+      <BackgroundsDemo />
+
       <Section tone="white">
         <Label>Bentuk</Label>
         <SectionHeading title="Diambil dari" titleLight="gedung MSU sendiri." description="Atap runcing jendela gedung, kubah, pola bintang delapan, dan garis fasad menjadi bahasa visual yang tidak dimiliki masjid lain." />
@@ -138,7 +100,7 @@ export default function ComponentsPage() {
             <p className="mt-4 font-semibold text-brand-900">Kubah + aksen <span className="font-normal text-ink/60">ArchFrame accent</span></p>
           </div>
           <div className="flex flex-col gap-6 md:col-span-2">
-            <Card tone="green" pattern className="min-h-56 flex-1">
+            <Card tone="green" pattern="star" className="min-h-56 flex-1">
               <p className="font-semibold">Pola bintang delapan</p>
               <p className="mt-1 text-sm text-white/70">Pattern, untuk latar section dan card</p>
             </Card>
@@ -155,7 +117,7 @@ export default function ComponentsPage() {
         </div>
       </Section>
 
-      <Section tone="green" pattern>
+      <Section tone="green" pattern="star">
         <Label>Ikon</Label>
         <SectionHeading title="Ikon sendiri" titleLight="dengan aksen emas." description="Garis 1,75 dengan bagian aksen. Beberapa ikon memuat bentuk jendela MSU. Aksen bisa diganti lewat variabel --icon-accent." />
         <div className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-5">
@@ -189,7 +151,7 @@ export default function ComponentsPage() {
               Link teks: <TextLink href="/tentang">Lihat sejarah masjid</TextLink>
             </p>
           </Card>
-          <Card tone="green" pattern>
+          <Card tone="green" pattern="star">
             <div className="flex flex-wrap gap-3">
               <Button href="/infak" variant="gold">
                 Gold di latar gelap
@@ -208,6 +170,10 @@ export default function ComponentsPage() {
         </div>
       </Section>
 
+      <ContentCardsDemo />
+
+      <HeroAltDemo />
+
       <Section id="komposisi" tone="white">
         <Label>Komposisi</Label>
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
@@ -220,7 +186,7 @@ export default function ComponentsPage() {
           <StaggerGrid>
             <ArchCard href="/program" image={{ src: "/images/msu-windows.jpg", alt: "Jendela gedung MSU" }} title="Kajian rutin" description="Senin dan Kamis ba'da Maghrib." badge={{ icon: IconCalendar, label: "Mingguan" }} />
             <ArchCard href="/program" shape="dome" image={{ src: "/images/msu-facade.jpg", alt: "Fasad gedung Syamsul Ulum" }} title="Tahsin Al-Qur'an" description="Perbaiki bacaan bersama pengajar." badge={{ icon: IconQuran, label: "Terbuka" }} />
-            <Card tone="green" pattern className="aspect-[3/4]">
+            <Card tone="green" pattern="star" className="aspect-[3/4]">
               <div className="flex h-full flex-col justify-between">
                 <span className="grid size-14 place-items-center rounded-2xl bg-gold-400 text-brand-950 [--icon-accent:var(--color-white)]">
                   <IconCommunity className="size-7" />
@@ -236,7 +202,7 @@ export default function ComponentsPage() {
         </div>
       </Section>
 
-      <Section tone="cream" pattern>
+      <Section tone="cream" pattern="star">
         <SectionHeading title="Bento untuk" titleLight="cerita singkat." description="Satu foto besar, satu angka, dan satu card warna sudah cukup. Hindari empat card berukuran sama." />
         <div className="mt-14 grid gap-4 md:grid-cols-6 md:grid-rows-2">
           <div className="relative min-h-80 overflow-hidden rounded-card md:col-span-3 md:row-span-2">
@@ -253,11 +219,11 @@ export default function ComponentsPage() {
             <p className="text-6xl font-extrabold tracking-[-0.04em]">2026–29</p>
             <p className="mt-3 font-semibold">Masa khidmat DKM</p>
           </Card>
-          <Card tone="white" className="md:col-span-1">
+          <Card tone="mint" pattern="arches" fade="bottom" className="md:col-span-1">
             <IconQuran className="size-9 text-brand-900" />
             <p className="mt-6 font-bold text-brand-900">Tahsin</p>
           </Card>
-          <Card tone="green" pattern className="md:col-span-3">
+          <Card tone="green" pattern="star" className="md:col-span-3">
             <div className="flex h-full flex-col justify-between gap-6 sm:flex-row sm:items-end">
               <div className="flex flex-col gap-3">
                 <InfoRow icon={IconCalendar}>Senin dan Kamis</InfoRow>
@@ -270,6 +236,7 @@ export default function ComponentsPage() {
           </Card>
         </div>
       </Section>
+
     </>
   );
 }

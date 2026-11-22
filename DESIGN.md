@@ -35,11 +35,22 @@ Semua diturunkan dari gedung MSU:
 - **Jendela** (`shape-window`, `ArchFrame shape="window"`): badan tegak dengan atap runcing, meniru jendela gedung.
 - **Kubah** (`ArchFrame shape="dome"`): atap setengah lingkaran.
 - **Aksen** (`ArchFrame accent`): bayangan bentuk yang sama berwarna emas di belakang gambar.
-- **Pola bintang delapan** (`Pattern`, prop `pattern` di `Section`/`Card`): latar section dan card.
+- **Pola** (`Pattern`, prop `pattern` di `Section`/`Card`): `star` (bintang delapan), `roster` (dinding berlubang gedung MSU), `arches` (deret jendela kecil).
+- **Garis jendela bertingkat** (`ArchRings`): dekorasi di belakang foto atau kutipan.
 - **Deret jendela** (`WindowRow`): tepi atas section, dipakai di footer.
 - **Garis gedung** (`BuildingLine`): ilustrasi fasad dari Figma, untuk footer atau hero.
 
-Aset ada di `public/shapes/` dan `public/images/`.
+Aset ada di `public/shapes/` dan `public/images/`. Foto diambil dari Figma Media-DKMSU. Foto malam masjid (`msu-night.jpg`) masih berupa render 560 px, jadi perlu diganti dengan ekspor resolusi penuh.
+
+## Latar
+
+Jangan memakai kombinasi latar yang sama berturut-turut. Pilih dari:
+
+- Nada `Section`: `white`, `cream`, `mint`, `green`, `gold`.
+- Pola: `star`, `roster`, `arches`, atau tanpa pola.
+- Arah pudar (`fade`): `bottom`, `right`, `center`, atau penuh.
+
+Contoh urutan halaman: hero `green` + `star` pudar tengah → `white` → `cream` + `roster` pudar kanan → `mint` + `arches` pudar bawah → `white` → footer. Untuk hero, pakai foto dalam `ArchFrame` atau foto penuh dengan gradasi hijau.
 
 ## Ikon
 
@@ -58,6 +69,19 @@ Pakai ikon dari `components/icons`. Jangan memasang library ikon. Ikon digambar 
 | `Pill` | Badge berikon untuk label pendek atau label melayang |
 | `InfoRow` | Baris ikon + teks untuk tanggal, jam, lokasi, dan kontak |
 | `StaggerGrid` | Grid 4 kolom dengan item genap turun, supaya tidak kaku |
+| `LogoStrip` | Deretan logo wajihah atau mitra, berwarna saat hover |
+
+Card konten ada di `components/cards/`:
+
+| Card | Kegunaan |
+|---|---|
+| `EventCard` | Agenda atau kajian. Tanggal di dalam jendela, jam dan lokasi |
+| `NewsCard` | Kabar, dengan tab kategori berbentuk jendela. `featured` untuk kabar utama |
+| `PrayerTimesCard` | Jadwal sholat dalam card beratap kubah, waktu berikutnya disorot emas |
+| `DonationCard` | Program infak dengan progres dan penanda jendela |
+| `ServiceCard` | App MSU di subdomain lain. Tanpa `url` tampil sebagai Segera hadir |
+| `Steps` | Alur bernomor, misalnya alur peminjaman |
+| `QuoteCard` | Hadis atau ayat dengan teks Arab (Amiri) |
 
 ## Layout
 
@@ -71,7 +95,9 @@ Pakai ikon dari `components/icons`. Jangan memasang library ikon. Ikon digambar 
 |---|---|---|---|
 | `Button` | Warna menggelap, lingkaran membesar, panah berganti | Mengecil 3% | Cincin emas |
 | `TextLink` | Garis bawah tumbuh dari kiri | | Garis bawah penuh |
-| `ArchCard` | Gambar zoom 5%, judul berganti warna | | Cincin emas |
+| `ArchCard`, `NewsCard` | Gambar zoom 5%, judul berganti warna | | Cincin emas |
+| `EventCard` | Card terangkat, jendela tanggal menjadi emas, panah berputar | | Cincin emas |
+| `ServiceCard` | Latar hijau naik dari bawah, ikon menjadi emas | | Cincin emas |
 
 Gerak memakai `transform` 200–500 ms dan dimatikan lewat `motion-safe:` untuk pengguna yang memilih reduced motion. Jangan menambah animasi fade-up di setiap section.
 

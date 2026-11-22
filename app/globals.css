@@ -28,8 +28,11 @@
 }
 
 @utility mask-pattern {
-  mask: url("/shapes/pattern-star.svg") repeat;
-  mask-size: 72px;
+  /* Pola berulang (--pattern) dipotong dengan gradien (--pattern-fade) supaya bisa memudar */
+  mask-image: var(--pattern), var(--pattern-fade, linear-gradient(#000, #000));
+  mask-size: var(--pattern-size), 100% 100%;
+  mask-repeat: repeat, no-repeat;
+  mask-composite: intersect;
 }
 
 @utility mask-window-row {

@@ -36,7 +36,7 @@ export function SiteFooter({ site, navigation, apps }: SiteFooterProps) {
     <footer data-tone="green" className="text-white">
       <WindowRow className="text-brand-900" />
       <div className="relative overflow-hidden bg-brand-900">
-        <Pattern className="text-white/[0.05]" />
+        <Pattern variant="roster" fade="right" className="text-white/[0.06]" />
         <div className="relative">
           <Container>
             <div className="flex flex-col gap-10 border-b border-white/10 py-16 lg:flex-row lg:items-end lg:justify-between">

@@ -12,14 +12,14 @@ Warna, font, dan radius MUST didefinisikan sekali sebagai design tokens di `app/
 - **THEN** semua komponen yang memakai token itu ikut berubah tanpa mengedit file komponen
 
 ### Requirement: Komponen dasar bersama
-Repo MUST menyediakan komponen dasar di `components/ui/`: `Container`, `Section`, `SectionHeading`, `Button`, `TextLink`, `Card`, `ArchFrame`, `ArchCard`, `Pill`, `InfoRow`, `StaggerGrid`, `Pattern`, `WindowRow`, dan `BuildingLine`. Komponen MUST menerima isi lewat props dan tidak menyimpan teks konten sendiri.
+Repo MUST menyediakan komponen dasar di `components/ui/`: `Container`, `Section`, `SectionHeading`, `Button`, `TextLink`, `Card`, `ArchFrame`, `ArchCard`, `ArchRings`, `Pill`, `InfoRow`, `StaggerGrid`, `LogoStrip`, `Pattern`, `WindowRow`, dan `BuildingLine`. Komponen MUST menerima isi lewat props dan tidak menyimpan teks konten sendiri.
 
 #### Scenario: Halaman memakai komponen dasar
 - **WHEN** developer membuat section baru di sebuah halaman
 - **THEN** section itu dibangun dari `Section`, `SectionHeading`, dan `Card` yang sudah ada, bukan versi baru
 
 ### Requirement: Latar section tidak kosong
-`Section` dan `Card` MUST mendukung nada latar (`white`, `cream`, `green`, dan `gold` untuk Card) serta pola bintang delapan lewat prop `pattern`. Teks judul di latar hijau MUST otomatis berganti ke warna terang.
+`Section` dan `Card` MUST mendukung nada latar `white`, `cream`, `mint`, `green`, dan `gold`, pola `star`, `roster`, dan `arches` lewat prop `pattern`, serta arah pudar lewat prop `fade`. Teks judul di latar hijau MUST otomatis berganti ke warna terang.
 
 #### Scenario: Section hijau berpola
 - **WHEN** developer memakai `<Section tone="green" pattern>` berisi `SectionHeading`
@@ -68,8 +68,19 @@ Ikon MUST diambil dari `components/icons`, tanpa library ikon. Setiap ikon memak
 - **WHEN** `InfoRow` diberi ikon kalender dan teks "20 Nov – 3 Des 2026"
 - **THEN** ikon tampil di kotak hijau dan teksnya tampil di sebelah kanan
 
+### Requirement: Card konten bersama
+Repo MUST menyediakan card konten di `components/cards/`: `EventCard`, `NewsCard`, `PrayerTimesCard`, `DonationCard`, `ServiceCard`, `Steps`, dan `QuoteCard`. Setiap card MUST memakai minimal satu bentuk khas atau pola, menerima data lewat props yang bentuknya datar, dan punya keadaan hover serta fokus keyboard bila bisa diklik.
+
+#### Scenario: Agenda di beranda
+- **WHEN** change halaman beranda menampilkan agenda
+- **THEN** agenda memakai `EventCard` dengan tanggal di dalam bingkai jendela, bukan card agenda versi baru
+
+#### Scenario: App yang belum siap
+- **WHEN** `ServiceCard` dipakai tanpa `url`
+- **THEN** card tampil dengan label "Segera hadir" dan tidak bisa diklik
+
 ### Requirement: Halaman katalog komponen
-Halaman `/komponen` MUST menampilkan warna, tipografi, bentuk, ikon, tombol, card, dan contoh komposisi (deretan card yang tidak seragam dan bento). Halaman ini MUST tidak muncul di menu dan MUST ditandai `noindex`.
+Halaman `/komponen` MUST menampilkan warna, tipografi, latar, bentuk, ikon, tombol, card konten, dan contoh komposisi (dua hero, deretan card yang tidak seragam, dan bento). Halaman ini MUST tidak muncul di menu dan MUST ditandai `noindex`.
 
 #### Scenario: Review tampilan komponen
 - **WHEN** tim membuka `/komponen` di link preview PR

@@ -25,6 +25,9 @@
 - [x] 4.2 Buat `Button` (primary, gold, outline, light) dengan micro-interaction panah, dan `TextLink`
 - [x] 4.3 Buat `Card` bernada warna, `ArchFrame`, `ArchCard`, `Pill`, `InfoRow`, dan `StaggerGrid`
 - [x] 4.4 Buat halaman `/komponen` (katalog DNA dan contoh komposisi) dengan `noindex`, tanpa link di menu
+- [x] 4.5 Tambah variasi latar: pola roster dan deret jendela, arah pudar, nada mint dan emas, dan `ArchRings`
+- [x] 4.6 Buat card konten di `components/cards/`: agenda, kabar, jadwal sholat, infak, layanan, alur, dan kutipan
+- [x] 4.7 Ganti foto hero dengan foto malam masjid dari Figma dan tambah hero alternatif foto penuh
 
 ## 5. Layout
 
