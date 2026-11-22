@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Header dengan navigasi
-Setiap halaman MUST menampilkan header berisi logo yang mengarah ke beranda dan menu yang diambil dari `content/navigation.ts`.
+Setiap halaman MUST menampilkan header melayang berbentuk pill berisi logo yang mengarah ke beranda dan menu yang diambil dari `content/navigation.ts`. Item menu yang ditandai `highlight` MUST tampil sebagai tombol emas.
 
 #### Scenario: Header di desktop
 - **WHEN** pengunjung membuka halaman mana pun di lebar 1280 px
@@ -23,11 +23,15 @@ Di layar kecil, menu MUST disembunyikan di balik tombol yang bisa dibuka dan dit
 - **THEN** halaman tujuan terbuka dan menu tertutup
 
 ### Requirement: Footer
-Setiap halaman MUST menampilkan footer berisi nama masjid, alamat, kontak admin, dan akun media sosial dari `content/site.ts`.
+Setiap halaman MUST menampilkan footer hijau berpola dengan tepi atas berbentuk deret jendela. Footer berisi ajakan singkat dengan tombol Infak dan Hubungi admin, logo, alamat, menu dari `content/navigation.ts`, daftar app dari `content/apps.ts`, kontak dari `content/site.ts`, dan ilustrasi garis gedung MSU.
 
 #### Scenario: Informasi kontak di footer
 - **WHEN** pengunjung menggulir ke bagian bawah halaman mana pun
-- **THEN** alamat, kontak admin, dan link media sosial MSU terlihat
+- **THEN** alamat, kontak admin, link media sosial, dan daftar layanan MSU terlihat
+
+#### Scenario: App baru di footer
+- **WHEN** entri baru ditambahkan ke `content/apps.ts`
+- **THEN** app itu muncul di kolom Layanan footer tanpa mengubah komponen footer
 
 ### Requirement: Halaman placeholder
 Setiap item menu MUST punya route yang bisa dibuka: `/`, `/tentang`, `/program`, `/kabar`, `/layanan`, dan `/infak`. Sebelum diisi oleh change halamannya, route MUST menampilkan judul halaman dan keterangan bahwa halaman sedang dibuat.
